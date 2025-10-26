@@ -1,0 +1,73 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #02264a;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  background: rgb(27, 105, 6);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 320px;
+}
+
+input {
+  width: 250px;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  background: #02264a;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #c93808;
+}
+
+button.reset {
+  background: #02264a;
+}
+
+button.reset:hover {
+  background:  #c93808;
+}
+
+button.download {
+  background:  #02264a;
+  margin-top: 20px;
+}
+
+button.download:hover {
+  background:  #c93808;
+}
+
+#qrContainer {
+  margin-top: 20px;
+  min-height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
