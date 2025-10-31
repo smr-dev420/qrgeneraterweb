@@ -9,12 +9,15 @@ generateBtn.addEventListener("click", () => {
   qrContainer.innerHTML = "";
   downloadBtn.style.display = "none";
 
-  if (!qrText) {
-    alert("Please enter text or URL");
+ 
+ const urlPattern = /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/[^\s]*)?$/i;
+
+  if (!urlPattern.test(qrText)) {
+    alert("Please enter a valid URL (starting with http:// or https://)");
     return;
   }
 
-  
+ 
   const qr = new QRCode(qrContainer, {
     text: qrText,
     width: 200,
@@ -22,7 +25,6 @@ generateBtn.addEventListener("click", () => {
     colorDark: "#000000",
     colorLight: "#ffffff",
   });
-
 
   setTimeout(() => {
     const qrImg = qrContainer.querySelector("img");
@@ -34,12 +36,9 @@ generateBtn.addEventListener("click", () => {
       downloadBtn.onclick = () => {
         let imageSrc;
 
-        
         if (qrImg && qrImg.src) {
           imageSrc = qrImg.src;
-        }
-       
-        else if (qrCanvas) {
+        } else if (qrCanvas) {
           imageSrc = qrCanvas.toDataURL("image/png");
         }
 
@@ -63,3 +62,4 @@ resetBtn.addEventListener("click", () => {
   qrContainer.innerHTML = "";
   downloadBtn.style.display = "none";
 });
+
